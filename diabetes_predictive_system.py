@@ -19,7 +19,7 @@ input_data_as_numpy_array = np.asarray(input_data)
 input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 
 rf= loaded_model.predict(input_data_reshaped)
-rf(prediction)
+print(rf)
 
 if (rf[0] == 0):
   print('The person is not diabetic')
