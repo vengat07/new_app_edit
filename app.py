@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from PIL import Image
@@ -12,13 +11,11 @@ import seaborn as sns
 
 
 
-df = pd.read_csv('diabetes_1.csv')
+df = pd.read_csv("diabetes.csv")
 
 # HEADINGS
-st.title('Diabetes checkup')
-st.sidebar.header('Enter Your data')
-st.write(df.head())
-
+st.title('Diabetes Checkup')
+st.sidebar.header('Patient Data')
 st.subheader('Training Data Stats')
 st.write(df.describe())
 
@@ -31,16 +28,17 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-  pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
-  glucose = st.sidebar.slider('Glucose', 0,200, 120 )
-  bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
-  skinthickness = st.sidebar.slider('Skin Thickness', 0,100, 20 )
-  insulin = st.sidebar.slider('Insulin', 0,846, 79 )
-  bmi = st.sidebar.slider('BMI', 0,67, 20 )
-  dpf = st.sidebar.slider('Diabetes Pedigree Function', 0.0,2.4, 0.47 )
-  age = st.sidebar.slider('Age', 21,88, 33 )
+    
+    pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
+    glucose = st.sidebar.slider('Glucose', 0,200, 120 )
+    bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
+    skinthickness = st.sidebar.slider('Skin Thickness', 0,100, 20 )
+    insulin = st.sidebar.slider('Insulin', 0,846, 79 )
+    bmi = st.sidebar.slider('BMI', 0,67, 20 )
+    dpf = st.sidebar.slider('Diabetes Pedigree Function', 0.0,2.4, 0.47 )
+    age = st.sidebar.slider('Age', 21,88, 33 )
 
-  user_report_data = {
+    user_report_data = {
       'pregnancies':pregnancies,
       'glucose':glucose,
       'bp':bp,
@@ -50,8 +48,8 @@ def user_report():
       'dpf':dpf,
       'age':age
   }
-  report_data = pd.DataFrame(user_report_data, index=[0])
-  return report_data
+    report_data = pd.DataFrame(user_report_data, index=[0])
+    return report_data
 
 
 
@@ -78,9 +76,10 @@ st.title('Visualised Patient Report')
 
 # COLOR FUNCTION
 if user_result[0]==0:
-  color = 'blue'
+    
+    color = 'blue'
 else:
-  color = 'red'
+    color = 'red'
 
 
 # Age vs Pregnancies
@@ -167,9 +166,10 @@ st.pyplot(fig_dpf)
 st.subheader('Your Report: ')
 output=''
 if user_result[0]==0:
-  output = 'You are not Diabetic'
+    
+    output = 'You are not Diabetic'
 else:
-  output = 'You are Diabetic'
+    output = 'You are Diabetic'
 st.title(output)
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
