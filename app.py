@@ -21,7 +21,8 @@ df = pd.read_csv('diabetes.csv')
 
 # HEADINGS
 st.title('Diabetes checkup')
-st.sidebar.header('Patient Data')
+st.sidebar.header('Enter Your data')
+
 st.subheader('Training Data Stats')
 st.write(df.describe())
 
