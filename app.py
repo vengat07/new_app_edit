@@ -9,7 +9,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
-st.set_page_config(page_title="Daibetes_Prediction",page_icon=":stethoscope:U+1FA7A:",layout="centered")
+page_title = "Daibetes_Predicction"
+page_icon = ":stethoscope:U+1FA7A:"
+layout = "centered"
+st.set_page_config(page_title = page_title,page_icon = page_icon,layout = layout)
 
 st.title(page_title + " " + page_icon)
 
