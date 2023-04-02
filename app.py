@@ -61,15 +61,15 @@ def user_report():
 #   st.success("Data Saved")
 
 # PATIENT DATA
-user_data = user_report()
+user_data_with_name= user_report()
 st.subheader('Patient Data')
 st.write(user_data)
 
 #patient_data = user_data
 #patient_data.to_csv('patient_data.csv')
 
-
-
+user_data_without_name = user_report()
+user_data_without_name = user_report_without_name.drop('name',axis=1)
 
 # MODEL
 rf  = RandomForestClassifier()
