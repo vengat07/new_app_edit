@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
-
+st.set_page_config(page_title=Daibetes_Prediction,page_icon=🩺,loyout="centered")
 
 df = pd.read_csv("diabetes_1.csv")
 
