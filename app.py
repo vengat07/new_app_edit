@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
-page_title = "Daibetes_Prediction"
+page_title = "Daibetes_Prediction and checkup"
 
 st.set_page_config(page_title = page_title)
 
