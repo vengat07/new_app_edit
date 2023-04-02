@@ -32,7 +32,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    
+    name = st.sidebar.text_input("", placeholder = "Enter yoru name...")
     pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
     glucose = st.sidebar.slider('Glucose', 0,200, 120 )
     bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
@@ -43,6 +43,7 @@ def user_report():
     age = st.sidebar.slider('Age', 21,88, 33 )
 
     user_report_data = {
+      'name' :name,
       'pregnancies':pregnancies,
       'glucose':glucose,
       'bp':bp,
@@ -64,8 +65,8 @@ user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
 
-patient_data = user_data
-patient_data.to_csv('patient_data.csv')
+#patient_data = user_data
+#patient_data.to_csv('patient_data.csv')
 
 
 
@@ -84,7 +85,6 @@ st.title('Visualised Patient Report')
 
 # COLOR FUNCTION
 if user_result[0]==0:
-    
     color = 'blue'
 else:
     color = 'red'
