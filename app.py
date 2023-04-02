@@ -68,9 +68,9 @@ st.write(user_data_with_name)
 #patient_data = user_data_with_name
 #patient_data.to_csv('patient_data.csv')
 
-user_data_without_name = user_report()
+#user_data_without_name = user_report()
 user_data_without_name = user_report_without_name.drop('name',axis=1)
-
+user_data_without_name = user_report()
 # MODEL
 rf  = RandomForestClassifier()
 rf.fit(x_train, y_train)
