@@ -11,6 +11,8 @@ import seaborn as sns
 
 st.set_page_config(page_title="Daibetes_Prediction",page_icon=":stethoscope:U+1FA7A:",layout="centered")
 
+st.title(page_title + " " + page_icon)
+
 df = pd.read_csv("diabetes_1.csv")
 
 # HEADINGS
