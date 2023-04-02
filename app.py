@@ -59,6 +59,9 @@ user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
 
+patient_data = user_data
+patient_data.to_csv('patient_data.csv')
+
 
 
 
