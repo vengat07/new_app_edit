@@ -55,8 +55,9 @@ def user_report():
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
 
-st.sidebar.form_submit_button("Save Data")
-
+submitted= st.sidebar.form_submit_button("Save Data")
+if submitted:
+    st.success("Data Saved")
 
 # PATIENT DATA
 user_data = user_report()
