@@ -60,6 +60,8 @@ def user_report():
 #if submitted:
 #   st.success("Data Saved")
 
+user_data_full = pd.DataFrame(user_data, index=[0])
+
 st.write(user_data.head())
 
 # PATIENT DATA
