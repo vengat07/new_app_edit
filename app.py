@@ -32,7 +32,6 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 # FUNCTION
 def user_report():
-    name = st.sidebar.text_imput('Enter the name')
     pregnancies = st.sidebar.slider('Pregnancies', 0,17, 3 )
     glucose = st.sidebar.slider('Glucose', 0,200, 120 )
     bp = st.sidebar.slider('Blood Pressure', 0,122, 70 )
@@ -43,7 +42,6 @@ def user_report():
     age = st.sidebar.slider('Age', 21,88, 33 )
 
     user_report_data = {
-      'name' :name,
       'pregnancies':pregnancies,
       'glucose':glucose,
       'bp':bp,
