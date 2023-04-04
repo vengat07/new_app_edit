@@ -60,6 +60,8 @@ def user_report():
 #if submitted:
 #   st.success("Data Saved")
 
+st.write(user_data.head())
+
 # PATIENT DATA
 user_data_with_name= user_report()
 st.subheader('Patient Data')
