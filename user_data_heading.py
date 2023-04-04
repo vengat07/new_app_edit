@@ -65,7 +65,8 @@ def user_report():
 user_data = user_report()
 st.subheader('Patient Data')
 st.write(user_data)
-st.write(user_data.drop('age',axis=1,replace=True)
+user_data_without_name=user_data.drop('age',axis=1,replace=True)
+st.write(user_data_without_name)
 
 
 
