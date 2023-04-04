@@ -60,20 +60,14 @@ def user_report():
 
 
 # PATIENT DATA
-user_data_with_name= user_report()
+user_data = user_report()
 st.subheader('Patient Data')
-st.write(user_data_with_name)
-
-patient_data = user_data_with_name
-patient_data.to_csv('patient_data.csv')
-
-#user_data_without_name = user_report()
-user_data_without_name = user_data_with_name.drop('name',axis=1)
+st.write(user_data)
 
 # MODEL
 rf  = RandomForestClassifier()
 rf.fit(x_train, y_train)
-user_result = rf.predict(user_data_without_name)
+user_result = rf.predict(user_data)
 
 
 
