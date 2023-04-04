@@ -138,7 +138,7 @@ st.pyplot(fig_st)
 st.header('Insulin Value Graph (Others vs Yours)')
 fig_i = plt.figure()
 ax9 = sns.scatterplot(x = 'Age', y = 'Insulin', data = df, hue = 'Outcome', palette='rocket')
-ax10 = sns.scatterplot(x = user_data['age'], y = user_data['insulin'], s = 150, color = color)
+ax10 = sns.scatterplot(x = user_data_witout_name['age'], y = user_data_witout_name['insulin'], s = 150, color = color)
 plt.xticks(np.arange(10,100,5))
 plt.yticks(np.arange(0,900,50))
 plt.title('0 - Healthy & 1 - Unhealthy')
@@ -177,5 +177,5 @@ if user_result[0]==0:
 else:
     output = 'You are Diabetic'
 st.title(output)
-st.subheader('Accuracy: ')
-st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+#st.subheader('Accuracy: ')
+#st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
