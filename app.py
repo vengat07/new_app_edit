@@ -60,25 +60,22 @@ def user_report():
 #if submitted:
 #   st.success("Data Saved")
 
-user_data_full = pd.DataFrame(user_data, index=[0])
-
-st.write(user_data.head())
 
 # PATIENT DATA
 user_data_with_name= user_report()
 st.subheader('Patient Data')
 st.write(user_data_with_name)
 
-#patient_data = user_data_with_name
-#patient_data.to_csv('patient_data.csv')
+patient_data = user_data_with_name
+patient_data.to_csv('patient_data.csv')
 
-#user_data_without_name = user_report()
-user_data_without_name = user_data.drop('name',axis=1,inplace =True)
+user_data_without_name = user_report()
+user_data_without_name = user_data_without_name.drop('name',axis=1)
 
 # MODEL
 rf  = RandomForestClassifier()
 rf.fit(x_train, y_train)
-user_result = rf.predict(user_data)
+user_result = rf.predict(user_data_without_name)
 
 
 
