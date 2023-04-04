@@ -67,15 +67,16 @@ user_data_with_name.insert(0,"name",name,True)
 #df.insert(2, "Age", [21, 23, 24, 21], True)
 st.subheader('Patient Data')
 st.write(user_data_with_name)
+user_data_witout_name = user_data_with_name.drop('name',axis=1)
 
 # MODEL
 rf  = RandomForestClassifier()
 rf.fit(x_train, y_train)
-user_result = rf.predict(user_data_with_name.drop('name',axis=1)
+user_result = rf.predict(user_data_witout_name)
 
 
 
-# VISUALISATIONS
+# VISUALISATIONS 
 st.title('Visualised Patient Report')
 
 
