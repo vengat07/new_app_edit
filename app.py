@@ -15,10 +15,11 @@ st.set_page_config(page_title = page_title)
 
 df = pd.read_csv("diabetes_1.csv")
 
+
 # HEADINGS
 st.title('Diabetes Checkup')
 st.sidebar.header('Patient Data')
-
+name = st.sidebar.text_input('Enter the name')
 st.write(df.head())
 st.subheader('Training Data Stats')
 st.write(df.describe())
