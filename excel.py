@@ -35,7 +35,7 @@ user_Age = options_form.text_input("Age")
 add_data =  options_form.form_submit_button()
 
 if add_data:
-  new_data= {"Name": user_Name, "Pregnancies": int(user_Pregnancies), "Glucose": int(user_Pregnancies), "BloodPressure": int(user_BloodPressure), "SkinThickness": int(user_SkinThickness), "Insulin": int(user_Insulin), "BMI": int(user_BMI), "DiabetesPedigreeFunction": float(user_DiabetesPedigreeFunction), "Age": int(uses_Age)} 
+  new_data= {"Name": user_Name, "Pregnancies": int(user_Pregnancies), "Glucose": int(user_Glucose), "BloodPressure": int(user_BloodPressure), "SkinThickness": int(user_SkinThickness), "Insulin": int(user_Insulin), "BMI": int(user_BMI), "DiabetesPedigreeFunction": float(user_DiabetesPedigreeFunction), "Age": int(uses_Age)} 
 
   df=df.append(new_data, ignore_index=True)
 
