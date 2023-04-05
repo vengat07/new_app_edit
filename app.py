@@ -56,7 +56,7 @@ def user_report():
     return report_data
 
 user_data_with_name = user_report()
-submitted= st.sidebar.form_submit_button("Save Data")
+submitted= st.sidebar.form_submit_button()
 if submitted:
     
     user_report_data = {
