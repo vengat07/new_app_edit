@@ -4,7 +4,7 @@ import pandas as pd
 
 st.title("Excel Update App")
 
-df = pd.read_csv("data/names.csv") 
+df = pd.read_csv("data_names.csv") 
 
 st.header("Existing File")
 
@@ -25,4 +25,4 @@ if add_data:
 
   df=df.append(new_data, ignore_index=True)
 
-  df.to_csv("data/names.csv", index-False)
+  df.to_csv("data_names.csv", index-False)
