@@ -16,7 +16,21 @@ options_form = st.sidebar.form("options_form")
 
 user_name = options_form.text_input("Name") 
 
-user_age = options_form.text_input("Age") 
+user_age = options_form.text_input("Pregnancies") 
+
+user_age = options_form.text_input("Glucose")
+
+user_age = options_form.text_input("BloodPressure")
+
+user_age = options_form.text_input("SkinThickness")
+
+user_age = options_form.text_input("Insulin")
+
+user_age = options_form.text_input("BMI")
+
+user_age = options_form.text_input("DiabetesPedigreeFunction")
+
+user_age = options_form.text_input("Age")
 
 add_data =  options_form.form_submit_button()
 
