@@ -55,13 +55,26 @@ def user_report():
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
 
-#submitted= st.sidebar.form_submit_button("Save Data")
-#if submitted:
-#   st.success("Data Saved")
+user_data_with_name = user_report()
+submitted= st.sidebar.form_submit_button("Save Data")
+if submitted:
+    
+    user_report_data = {
+      'pregnancies':pregnancies,
+      'glucose':glucose,
+      'bp':bp,
+      'skinthickness':skinthickness,
+      'insulin':insulin,
+      'bmi':bmi,
+      'dpf':dpf,
+      'age':age}
+    report_data = pd.DataFrame(user_report_data, index=[0])
+    user_data_with_name = user_data_with_name.append(report_data, ignore_index=True)
+    st.success("Data Saved")
 
 
 # PATIENT DATA
-user_data_with_name = user_report()
+#user_data_with_name = user_report()
 #user_data_with_name = user_report()
 user_data_with_name.insert(0,"name",name,True)
 #df.insert(2, "Age", [21, 23, 24, 21], True)
