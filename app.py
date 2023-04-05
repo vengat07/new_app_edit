@@ -54,13 +54,13 @@ def user_report():
   }
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
-    submitted= st.sidebar.form_submit_button()
+    st.sidebar.form_submit_button()
     
 data_name = pd.read_csv("data_names.csv")
 user_data_with_name = user_report()
-if submitted:
-    data_name = data_name.append(user_data_with_name, ignore_index = True)
-    data_name.to_csv("data_names.csv",index = True)
+#if submitted:
+data_name = data_name.append(user_data_with_name, ignore_index = True)
+data_name.to_csv("data_names.csv",index = True)
     
 
 #user_data_with_name = user_report()
