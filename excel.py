@@ -39,4 +39,4 @@ if add_data:
 
   df=df.append(new_data, ignore_index=True)
 
-  df.to_csv("data_names.csv", index-False)
+  df.to_csv("data_names.csv", index=False)
