@@ -48,7 +48,7 @@ def user_report():
     add_data = st.sidebar.form_submit_button()
     
     user_report_data = {
-      'name' ;name,
+      'name' :name,
       'pregnancies':pregnancies,
       'glucose':glucose,
       'bp':bp,
