@@ -19,7 +19,7 @@ df = pd.read_csv("diabetes_1.csv")
 # HEADINGS
 st.title('Diabetes Checkup')
 st.sidebar.header('Patient Data')
-name = st.sidebar.text_input('Enter the name')
+#name = st.sidebar.text_input('Enter the name')
 st.write(df.head())
 st.subheader('Training Data Stats')
 st.write(df.describe())
@@ -31,8 +31,11 @@ y = df.iloc[:, -1]
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state = 0)
 
 
+data_name = pd.read_csv("data_names.csv")
+
 # FUNCTION
 def user_report():
+    name = st.sidebar.text_input('Enter the name')
     pregnancies = st.sidebar.text_input('Pregnancies')
     glucose = st.sidebar.text_input('Glucose')
     bp = st.sidebar.text_input('Blood Pressure')
@@ -41,8 +44,11 @@ def user_report():
     bmi = st.sidebar.text_input('BMI')
     dpf = st.sidebar.text_input('Diabetes Pedigree Function')
     age = st.sidebar.text_input('Age')
-
+    
+    add_data = st.sidebar.form_submit_button()
+    
     user_report_data = {
+      'name' ;name,
       'pregnancies':pregnancies,
       'glucose':glucose,
       'bp':bp,
@@ -51,16 +57,18 @@ def user_report():
       'bmi':bmi,
       'dpf':dpf,
       'age':age
+     data_name = data_name.append(user_report_data, ignore_index = True)
+        
   }
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
-    st.sidebar.form_submit_button()
     
-data_name = pd.read_csv("data_names.csv")
-user_data_with_name = user_report()
+    
+#data_name = pd.read_csv("data_names.csv")
+#user_data_with_name = user_report()
 #if submitted:
-data_name = data_name.append(user_data_with_name, ignore_index = True)
-data_name.to_csv("data_names.csv",index = True)
+#data_name = data_name.append(user_data_with_name, ignore_index = True)
+#data_name.to_csv("data_names.csv",index = True)
     
 
 #user_data_with_name = user_report()
