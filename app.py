@@ -57,9 +57,9 @@ def user_report():
       'bmi':bmi,
       'dpf':dpf,
       'age':age
+            
+       }
     data_name = data_name.append(user_report_data, ignore_index = True)
-        
-  }
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
     
